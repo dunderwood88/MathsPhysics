@@ -9,6 +9,7 @@
 #include <iostream>
 #include "ICalculusMachine.hpp"
 #include "IFunction.h"
+#include "IGaussQuadFunction.h"
 
 using namespace MathsPhysics;
 
@@ -55,4 +56,30 @@ public:
         
         return area;
     }
+    
+    void GaussPointsAndWeights(IGaussQuadFunction& func, double upperLim, double lowerLim, double step){
+        
+        if(upperLim < lowerLim){
+            std::cout << "upper limit is less than lower limit\n";
+            return;
+        }
+        
+        double prevPoint = lowerLim;
+        
+        for(double point = lowerLim; point < upperLim + step; point += step){
+            
+            if(func.Compute(point) == 0 || point == 0){
+                std::cout << point <<  "\n";
+            }
+            else if(func.Compute(point) * func.Compute(prevPoint) < 0){
+                
+                double pt = (point + prevPoint)/2;
+                
+                std::cout << pt << " " << 2/((1 - (pt * pt)) * (func.Derivative(pt) * func.Derivative(pt))) <<"\n";
+            }
+            
+            prevPoint = point;
+        }
+    }
+    
 };

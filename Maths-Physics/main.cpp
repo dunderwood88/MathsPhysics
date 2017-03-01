@@ -17,23 +17,16 @@ using namespace MathsPhysics;
 
 int main() {
     
-    /*CalculusMachine cm;
-    Legendre leg3(3);
-	GaussLegendreWeights glw(leg3);
-    Sine sin;*/
+	Legendre asLeg(130);
+    Laguerre asLag(30,0);
+
+	//std::cout <<  asLeg.Compute(0.5) << "\n";
+    //std::cout <<  asLag.Compute(5) << "\n";
     
-    //std::cout << leg3.Compute(5) << "\n";
-    //cm.FindZeroes(leg3, 1, 0, 0.001);
-
-
+    CalculusMachine cm;
     
-    //cm.FindZeroes(sin, 1080 * M_PI/180, 0, 0.001 * M_PI/180);
-    //cm.FindZeroes(sin, 1080 * M_PI/180, 0, 0.001 * M_PI/180);
+    //cm.FindZeroes(asLeg, 1, 0, 0.001);
+    cm.GaussPointsAndWeights(asLeg, 1, 0, 0.001);
     
-	AssocLegendre asLeg53(2, 1);
-
-	std::cout <<  asLeg53.Compute(5) << "\n";
-
-	std::cin.get();
     return 0;
 }

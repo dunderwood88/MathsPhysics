@@ -31,6 +31,7 @@
 		37DE4DC31E662A5800FA1BF0 /* Functions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Functions.cpp; sourceTree = "<group>"; };
 		37DE4DC51E662F3C00FA1BF0 /* CalculusMachine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CalculusMachine.cpp; sourceTree = "<group>"; };
 		37DE4DC61E662F3C00FA1BF0 /* ICalculusMachine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ICalculusMachine.hpp; sourceTree = "<group>"; };
+		37DE4DC81E6782A600FA1BF0 /* IGaussQuadFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGaussQuadFunction.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +66,7 @@
 			children = (
 				37DE4DB91E6618DA00FA1BF0 /* main.cpp */,
 				37DE4DC01E66190B00FA1BF0 /* IFunction.h */,
+				37DE4DC81E6782A600FA1BF0 /* IGaussQuadFunction.h */,
 				37DE4DC31E662A5800FA1BF0 /* Functions.cpp */,
 				37DE4DC51E662F3C00FA1BF0 /* CalculusMachine.cpp */,
 				37DE4DC61E662F3C00FA1BF0 /* ICalculusMachine.hpp */,
@@ -249,6 +251,7 @@
 				37DE4DBF1E6618DA00FA1BF0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

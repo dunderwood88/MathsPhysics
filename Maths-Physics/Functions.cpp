@@ -10,6 +10,7 @@
 #include <stdio.h>
 #include <math.h>
 #include "IFunction.h"
+#include "IGaussQuadFunction.h"
 
 using namespace MathsPhysics;
 
@@ -31,134 +32,141 @@ public:
     }
 };
 
-class Legendre: public IFunction{
+
+
+class Legendre: public IGaussQuadFunction{
     
 private:
-     unsigned int _degree;
-	 unsigned int _order;
-    
-    double p0(){
-        return 1;
-    }
-    
-    double p1(double value){
-        return value;
-    }
+    unsigned int _degree;
+    unsigned int _order;
+    double _prevOrder;
+    double _topOrder;
     
 public:
     
-    Legendre(unsigned int deg){
+    Legendre(unsigned int deg) {
         _degree = deg;
-		_order = 0;
+        _order = 0;
     }
+    
 
-	Legendre(unsigned int deg, unsigned int ord) {
-		_degree = deg;
-		_order = ord;
-	}
+    Legendre(unsigned int deg, unsigned int ord) {
+        _degree = deg;
+        _order = ord;
+    }
+    
+    virtual double Derivative(double x){
+        
+        return _degree * ((x * _topOrder) - _prevOrder)/((x * x) - 1);
+    }
+    
+    virtual double Compute(double value) {
+        
+        if (_order > _degree || fabs(value) > 1) {
+            std::cout << "Bad arguments.\n";
+            return 0;
+        }
+        
+        
+        double pmm = 1;
+        
+        if (_order > 0) {
+            
+            double somx2 = sqrt((1 - value) * (1 + value));
+            double fact = 1;
+            
+            for (int i = 1; i <= _order; i++) {
+                
+                pmm *= -fact * somx2;
+                fact += 2;
+            }
+        }
+        
+        if (_degree == _order) {
+            return pmm;
+        }
+        else {
+            double pmmp1 = value * ((2 * _order) + 1) * pmm;
+            
+            if (_degree == (_order + 1)) {
+                return pmmp1;
+            }
+            else {
+                
+                double pll = 0;
+                
+                for (double ll = _order + 2; ll <= _degree; ll++) {
+                    
+                    pll = ((value * ((2 * ll) - 1) * pmmp1) - ((ll + _order - 1) * pmm)) / (ll - _order);
+                    
+                    pmm = pmmp1;
+                    pmmp1 = pll;
+                    
+                    _prevOrder = pmm;
+                    
+                }
+                return pll;
+            }
+        }
+        
+    }
+    
+};
+
+
+
+class Laguerre: public IGaussQuadFunction{
+    
+private:
+    unsigned int _degree;
+    unsigned int _order;
+    double _prevOrder;
+    double _topOrder;
+    
+    
+public:
+    
+    Laguerre(unsigned int deg){
+        _degree = deg;
+        _order = 0;
+    }
+    
+    Laguerre(unsigned int deg, unsigned int ord){
+        _degree = deg;
+        _order = ord;
+    }
+    
+    virtual double Derivative(double x){
+        return 1;
+    }
     
     virtual double Compute(double value){
         
+        double p0 = 1;
+        double p1 = 1 + _order - value;
+        
         if (_degree == 0){
-            return p0();
+            return p0;
         }
         else if (_degree == 1){
-            return p1(value);
+            return p1;
         }
         else{
             
             double pn = 0;
-            double pTemp1 = p1(value);
-            double pTemp2 = p0();
             
-            for (int i = 1; i < _degree; i++) {
+            for (int i = 1; i < _degree; i++){
                 
-                pn = (((2 * i + 1) * value * pTemp1) - (i * pTemp2))/(i + 1);
-                pTemp2 = pTemp1;
-                pTemp1 = pn;
+                pn = ((((2 * i) + 1 + _order - value) * p1) - ((i + _order) * p0))/(i + 1);
+                
+                p0 = p1;
+                p1 = pn;
+                
+                _prevOrder = p0;
             }
             
             return pn;
         }
+        
     }
-};
-
-class GaussLegendreWeights : public IFunction {
-
-private:
-	Legendre _leg;
-
-public:
-
-	GaussLegendreWeights(Legendre& leg) :_leg(leg) {
-		
-	}
-
-	virtual double Compute(double value) {
-
-		return 2 / ((1 - (value * value))*(_leg.Compute(value)*_leg.Compute(value)));
-	}
-};
-
-class AssocLegendre : public IFunction {
-
-private:
-	unsigned int _degree;
-	unsigned int _order;
-
-public:
-	AssocLegendre(unsigned int deg, unsigned int ord) {
-		_degree = deg;
-		_order = ord;
-	}
-
-	virtual double Compute(double value) {
-
-		if (_order < 0 || _order > _degree) {
-			std::cout << "Bad arguments.\n";
-			return 0;
-		}
-
-
-		double pmm = 1;
-
-		if (_order > 0) {
-
-			double somx2 = sqrt((1 - value) * (1 + value));
-			double fact = 1;
-
-			for (int i = 1; i <= _order; i++) {
-
-				pmm *= -fact;// *somx2;
-				fact += 2;
-
-				//std::cout << sqrt((1 - value) * (1 + value)) << "\n";
-			}
-		}
-
-		if (_degree == _order) {
-			return pmm;
-		}
-		else {
-			double pmmp1 = value * ((2 * _order) + 1) * pmm;
-
-			if (_degree == (_order + 1)) {
-				return pmmp1;
-			}
-			else {
-
-				double pll;
-
-				for (double ll = _order + 2; ll <= _degree; ll++) {
-
-					pll = ((value * ((2 * ll) - 1) * pmmp1) - (ll + _order - 1)) / (ll - _order);
-					pmm = pmmp1;
-					pmmp1 = pll;
-
-				}
-				return pll;
-			}
-		}
-
-	}
 };
