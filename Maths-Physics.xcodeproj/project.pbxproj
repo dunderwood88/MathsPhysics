@@ -1,0 +1,256 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		37DE4DBA1E6618DA00FA1BF0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DB91E6618DA00FA1BF0 /* main.cpp */; };
+		37DE4DC41E662A5800FA1BF0 /* Functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DC31E662A5800FA1BF0 /* Functions.cpp */; };
+		37DE4DC71E662F3C00FA1BF0 /* CalculusMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DC51E662F3C00FA1BF0 /* CalculusMachine.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		37DE4DB41E6618DA00FA1BF0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		37DE4DB61E6618DA00FA1BF0 /* Maths-Physics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Maths-Physics"; sourceTree = BUILT_PRODUCTS_DIR; };
+		37DE4DB91E6618DA00FA1BF0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		37DE4DC01E66190B00FA1BF0 /* IFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFunction.h; sourceTree = "<group>"; };
+		37DE4DC31E662A5800FA1BF0 /* Functions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Functions.cpp; sourceTree = "<group>"; };
+		37DE4DC51E662F3C00FA1BF0 /* CalculusMachine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CalculusMachine.cpp; sourceTree = "<group>"; };
+		37DE4DC61E662F3C00FA1BF0 /* ICalculusMachine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ICalculusMachine.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		37DE4DB31E6618DA00FA1BF0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		37DE4DAD1E6618DA00FA1BF0 = {
+			isa = PBXGroup;
+			children = (
+				37DE4DB81E6618DA00FA1BF0 /* Maths-Physics */,
+				37DE4DB71E6618DA00FA1BF0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		37DE4DB71E6618DA00FA1BF0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				37DE4DB61E6618DA00FA1BF0 /* Maths-Physics */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		37DE4DB81E6618DA00FA1BF0 /* Maths-Physics */ = {
+			isa = PBXGroup;
+			children = (
+				37DE4DB91E6618DA00FA1BF0 /* main.cpp */,
+				37DE4DC01E66190B00FA1BF0 /* IFunction.h */,
+				37DE4DC31E662A5800FA1BF0 /* Functions.cpp */,
+				37DE4DC51E662F3C00FA1BF0 /* CalculusMachine.cpp */,
+				37DE4DC61E662F3C00FA1BF0 /* ICalculusMachine.hpp */,
+			);
+			path = "Maths-Physics";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		37DE4DB51E6618DA00FA1BF0 /* Maths-Physics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 37DE4DBD1E6618DA00FA1BF0 /* Build configuration list for PBXNativeTarget "Maths-Physics" */;
+			buildPhases = (
+				37DE4DB21E6618DA00FA1BF0 /* Sources */,
+				37DE4DB31E6618DA00FA1BF0 /* Frameworks */,
+				37DE4DB41E6618DA00FA1BF0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Maths-Physics";
+			productName = "Maths-Physics";
+			productReference = 37DE4DB61E6618DA00FA1BF0 /* Maths-Physics */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		37DE4DAE1E6618DA00FA1BF0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Dan Underwood";
+				TargetAttributes = {
+					37DE4DB51E6618DA00FA1BF0 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+				};
+			};
+			buildConfigurationList = 37DE4DB11E6618DA00FA1BF0 /* Build configuration list for PBXProject "Maths-Physics" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 37DE4DAD1E6618DA00FA1BF0;
+			productRefGroup = 37DE4DB71E6618DA00FA1BF0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				37DE4DB51E6618DA00FA1BF0 /* Maths-Physics */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37DE4DB21E6618DA00FA1BF0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				37DE4DBA1E6618DA00FA1BF0 /* main.cpp in Sources */,
+				37DE4DC71E662F3C00FA1BF0 /* CalculusMachine.cpp in Sources */,
+				37DE4DC41E662A5800FA1BF0 /* Functions.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		37DE4DBB1E6618DA00FA1BF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		37DE4DBC1E6618DA00FA1BF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		37DE4DBE1E6618DA00FA1BF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		37DE4DBF1E6618DA00FA1BF0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		37DE4DB11E6618DA00FA1BF0 /* Build configuration list for PBXProject "Maths-Physics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37DE4DBB1E6618DA00FA1BF0 /* Debug */,
+				37DE4DBC1E6618DA00FA1BF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		37DE4DBD1E6618DA00FA1BF0 /* Build configuration list for PBXNativeTarget "Maths-Physics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				37DE4DBE1E6618DA00FA1BF0 /* Debug */,
+				37DE4DBF1E6618DA00FA1BF0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 37DE4DAE1E6618DA00FA1BF0 /* Project object */;
+}
