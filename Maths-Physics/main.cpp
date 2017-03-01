@@ -17,16 +17,14 @@ using namespace MathsPhysics;
 
 int main() {
     
-	Legendre asLeg(130);
-    Laguerre asLag(30,0);
-
-	//std::cout <<  asLeg.Compute(0.5) << "\n";
-    //std::cout <<  asLag.Compute(5) << "\n";
-    
+    Legendre leg3(30);
     CalculusMachine cm;
     
-    //cm.FindZeroes(asLeg, 1, 0, 0.001);
-    cm.GaussPointsAndWeights(asLeg, 1, 0, 0.001);
+    cm.GaussPointsAndWeights(leg3, 1, 0, 0.001);
+    
+    
+    //std::cout << leg3.Compute(0.5) << "\n";
+    //std::cout << leg3.Derivative(0.5) << "\n";
     
     return 0;
 }

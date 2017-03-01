@@ -57,7 +57,7 @@ public:
     
     virtual double Derivative(double x){
         
-        return _degree * ((x * _topOrder) - _prevOrder)/((x * x) - 1);
+        return _degree * ((x * _topOrder) - ((_order + 1) * _prevOrder))/((x * x) - 1);
     }
     
     virtual double Compute(double value) {
@@ -137,7 +137,9 @@ public:
     }
     
     virtual double Derivative(double x){
-        return 1;
+        
+        //What to do??
+        //return -Laguerre(_degree - 1, _order + 1).Compute(x);
     }
     
     virtual double Compute(double value){
