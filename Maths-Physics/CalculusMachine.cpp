@@ -24,6 +24,7 @@ public:
         }
         
         double prevPoint = lowerLim;
+		
         
         for(double point = lowerLim; point < upperLim + step; point += step){
             
