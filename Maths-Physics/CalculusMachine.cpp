@@ -7,9 +7,10 @@
 //
 
 #include <iostream>
+#include <iomanip>
+#include <vector>
+#include <stdio.h>
 #include "ICalculusMachine.hpp"
-#include "IFunction.h"
-#include "IGaussQuadFunction.h"
 
 using namespace MathsPhysics;
 
@@ -17,69 +18,53 @@ class CalculusMachine: public ICalculusMachine {
     
 public:
 
-    virtual void FindZeroes(IFunction& func, double upperLim, double lowerLim, double step){
-        
+    virtual std::vector<long double> FindZeroes(IFunction& func, long double upperLim, long double lowerLim, long double step){
+       
+		std::vector<long double> vec;
+
         if(upperLim < lowerLim){
             std::cout << "upper limit is less than lower limit\n";
-            return;
+			return vec;
         }
-        
-        double prevPoint = lowerLim;
+       
+
+        long double prevPoint = lowerLim;
 		
         
-        for(double point = lowerLim; point < upperLim + step; point += step){
+        for(long double point = lowerLim; point < upperLim + step; point += step){
             
             if(func.Compute(point) == 0 || point == 0){
-                std::cout << point << "\n";
+
+				vec.push_back(point);
             }
             else if(func.Compute(point) * func.Compute(prevPoint) < 0){
-                std::cout << (point + prevPoint)/2 << "\n";
+				
+				vec.push_back((point + prevPoint) / 2);
             }
             
             prevPoint = point;
         }
+
+		
+
+		return vec;
     }
     
-    virtual double AreaUnderCurve(IFunction& func, double upperLim, double lowerLim, double step){
+    virtual long double AreaUnderCurve(IFunction& func, long double upperLim, long double lowerLim, long double step){
         
         if(upperLim < lowerLim){
             std::cout << "upper limit is less than lower limit\n";
             return 0;
         }
         
-        double area = 0;
+        long double area = 0;
         
-        for(double point = lowerLim; point < upperLim; point += step){
+        for(long double point = lowerLim; point < upperLim; point += step){
             
             area += func.Compute(point)*step;
         }
         
         return area;
-    }
-    
-    void GaussPointsAndWeights(IGaussQuadFunction& func, double upperLim, double lowerLim, double step){
-        
-        if(upperLim < lowerLim){
-            std::cout << "upper limit is less than lower limit\n";
-            return;
-        }
-        
-        double prevPoint = lowerLim;
-        
-        for(double point = lowerLim; point < upperLim + step; point += step){
-            
-            if(func.Compute(point) == 0 || point == 0){
-                std::cout << point <<  "\n";
-            }
-            else if(func.Compute(point) * func.Compute(prevPoint) < 0){
-                
-                double pt = (point + prevPoint)/2;
-                
-                std::cout << pt << " " << 2/((1 - (pt * pt)) * (func.Derivative(pt) * func.Derivative(pt))) <<"\n";
-            }
-            
-            prevPoint = point;
-        }
     }
     
 };

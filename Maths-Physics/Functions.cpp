@@ -9,41 +9,18 @@
 #include <iostream>
 #include <stdio.h>
 #include <math.h>
-#include "IFunction.h"
 #include "IGaussQuadFunction.h"
 
 using namespace MathsPhysics;
 
-class Sine: public IFunction{
-    
-public:
-    virtual double Compute(double value){
-        
-        return sin(value);
-    }
-};
-
-class Cosine: public IFunction{
-    
-public:
-    virtual double Compute(double value){
-        
-        return cos(value);
-    }
-};
-
-
-
 class Legendre: public IGaussQuadFunction{
     
 private:
-    unsigned int _degree;
-    unsigned int _order;
-    double _prevOrder;
-    double _topOrder;
+    int _degree;
+    int _order;
     
 public:
-    
+
     Legendre(unsigned int deg) {
         _degree = deg;
         _order = 0;
@@ -54,26 +31,36 @@ public:
         _degree = deg;
         _order = ord;
     }
+
+	void Set(unsigned int deg, unsigned int ord) {
+		_degree = deg;
+		_order = ord;
+	}
     
-    virtual double Derivative(double x){
+    virtual long double Derivative(long double x){
         
-        return _degree * ((x * _topOrder) - ((_order + 1) * _prevOrder))/((x * x) - 1);
+		_degree -= 1;
+		long double legDegRev = Compute(x);
+		_degree += 1;
+		
+		return (_degree / ((x * x) - 1)) * ((x * Compute(x)) - ((_order + 1) * legDegRev));
+
     }
     
-    virtual double Compute(double value) {
+    virtual long double Compute(long double value) {
         
-        if (_order > _degree || fabs(value) > 1) {
-            std::cout << "Bad arguments.\n";
-            return 0;
-        }
+        /*if (_order > _degree || std::abs(value) > 1.0) {
+            std::cout << _order << " " << _degree << " " << std::abs(value) << " Bad arguments.\n";
+            return NULL;
+        }*/
         
         
-        double pmm = 1;
+        long double pmm = 1;
         
         if (_order > 0) {
             
-            double somx2 = sqrt((1 - value) * (1 + value));
-            double fact = 1;
+            long double somx2 = sqrt((1 - value) * (1 + value));
+            long double fact = 1;
             
             for (int i = 1; i <= _order; i++) {
                 
@@ -86,23 +73,21 @@ public:
             return pmm;
         }
         else {
-            double pmmp1 = value * ((2 * _order) + 1) * pmm;
+            long double pmmp1 = value * ((2 * _order) + 1) * pmm;
             
             if (_degree == (_order + 1)) {
                 return pmmp1;
             }
             else {
                 
-                double pll = 0;
+                long double pll = 0;
                 
-                for (double ll = _order + 2; ll <= _degree; ll++) {
+                for (long double ll = _order + 2; ll <= _degree; ll++) {
                     
                     pll = ((value * ((2 * ll) - 1) * pmmp1) - ((ll + _order - 1) * pmm)) / (ll - _order);
                     
                     pmm = pmmp1;
                     pmmp1 = pll;
-                    
-                    _prevOrder = pmm;
                     
                 }
                 return pll;
@@ -115,14 +100,11 @@ public:
 
 
 
-class Laguerre: public IGaussQuadFunction{
+/*class Laguerre: public IFunction{
     
 private:
-    unsigned int _degree;
-    unsigned int _order;
-    double _prevOrder;
-    double _topOrder;
-    
+    int _degree;
+    int _order;
     
 public:
     
@@ -136,13 +118,13 @@ public:
         _order = ord;
     }
     
-    virtual double Derivative(double x){
+    virtual long double Derivative(long double x){
         
         //What to do??
         //return -Laguerre(_degree - 1, _order + 1).Compute(x);
     }
     
-    virtual double Compute(double value){
+    virtual long double Compute(long double value){
         
         double p0 = 1;
         double p1 = 1 + _order - value;
@@ -164,7 +146,6 @@ public:
                 p0 = p1;
                 p1 = pn;
                 
-                _prevOrder = p0;
             }
             
             return pn;
@@ -172,3 +153,23 @@ public:
         
     }
 };
+
+
+
+class Sine: public IFunction{
+
+public:
+virtual long double Compute(long double value){
+
+return sinl(value);
+}
+};
+
+class Cosine: public IFunction{
+
+public:
+virtual long double Compute(long double value){
+
+return cosl(value);
+}
+};*/

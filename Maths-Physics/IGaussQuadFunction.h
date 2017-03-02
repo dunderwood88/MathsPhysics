@@ -6,10 +6,10 @@
 //  Copyright © 2017 Dan Underwood. All rights reserved.
 //
 
-#include "IFunction.h"
-
 #ifndef IGaussQuadFunction_h
 #define IGaussQuadFunction_h
+
+#include "IFunction.h"
 
 namespace MathsPhysics {
     
@@ -17,7 +17,7 @@ namespace MathsPhysics {
         
     public:
         virtual ~IGaussQuadFunction() {}
-        virtual double Derivative(double x) = 0;
+        virtual long double Derivative(long double x) = 0;
     };
 };
 

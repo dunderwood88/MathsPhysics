@@ -15,7 +15,7 @@ namespace MathsPhysics {
         
     public:
         virtual ~IFunction() {}
-        virtual double Compute(double value) = 0;
+        virtual long double Compute(long double value) = 0;
     };
 };
 

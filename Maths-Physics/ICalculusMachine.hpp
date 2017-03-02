@@ -6,13 +6,12 @@
 //  Copyright © 2017 Dan Underwood. All rights reserved.
 //
 
-#include <stdio.h>
-#include "IFunction.h"
-
 //using namespace MathsPhysics;
 
 #ifndef ICalculusMachine_hpp
 #define ICalculusMachine_hpp
+
+#include "IFunction.h"
 
 namespace MathsPhysics {
     
@@ -20,8 +19,8 @@ namespace MathsPhysics {
         
     public:
         virtual ~ICalculusMachine() {}
-        virtual double AreaUnderCurve(IFunction& func, double upperLim, double lowerLim, double step) = 0;
-        virtual void FindZeroes(IFunction& func, double upperLim, double lowerLim, double step) = 0;
+        virtual long double AreaUnderCurve(IFunction& func, long double upperLim, long double lowerLim, long double step) = 0;
+        virtual std::vector<long double> FindZeroes(IFunction& func, long double upperLim, long double lowerLim, long double step) = 0;
     };
 }
 

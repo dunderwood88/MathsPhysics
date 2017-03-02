@@ -9,22 +9,23 @@
 #define _USE_MATH_DEFINES
 
 #include <iostream>
-#include <cmath>
-#include "Functions.cpp"
-#include "CalculusMachine.cpp"
+#include "GaussQuadMachines.cpp"
 
 using namespace MathsPhysics;
 
 int main() {
     
-    Legendre leg3(30);
-    CalculusMachine cm;
-    
-    cm.GaussPointsAndWeights(leg3, 1, 0, 0.001);
-    
-    
-    //std::cout << leg3.Compute(0.5) << "\n";
-    //std::cout << leg3.Derivative(0.5) << "\n";
-    
+	GaussLegQuadMachine gasLeg(10);
+
+	std::vector<std::vector<long double>> pw = gasLeg.PointsAndWeights();
+
+	
+
+	//for (int i = 0; i < pw.size(); i++) {
+
+		//std::cout << pw[1][1] << " " << pw[1][0] << "\n";
+	
+	
+	std::getchar();
     return 0;
 }
