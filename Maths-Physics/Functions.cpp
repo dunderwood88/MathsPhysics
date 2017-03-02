@@ -40,10 +40,10 @@ public:
     virtual long double Derivative(long double x){
         
 		_degree -= 1;
-		long double legDegRev = Compute(x);
+		long double legDegPrev = Compute(x);
 		_degree += 1;
 		
-		return (_degree / ((x * x) - 1)) * ((x * Compute(x)) - ((_order + 1) * legDegRev));
+		return (_degree / ((x * x) - 1)) * ((x * Compute(x)) - ((_order + 1) * legDegPrev));
 
     }
     
@@ -100,7 +100,7 @@ public:
 
 
 
-/*class Laguerre: public IFunction{
+class Laguerre: public IGaussQuadFunction{
     
 private:
     int _degree;
@@ -120,8 +120,13 @@ public:
     
     virtual long double Derivative(long double x){
         
-        //What to do??
-        //return -Laguerre(_degree - 1, _order + 1).Compute(x);
+        _degree += 1;
+        _order -= 1;
+        long double lagDegPrev = -Compute(x);
+        _degree -= 1;
+        _order += 1;
+        
+        return lagDegPrev;
     }
     
     virtual long double Compute(long double value){
@@ -172,4 +177,4 @@ virtual long double Compute(long double value){
 
 return cosl(value);
 }
-};*/
+};

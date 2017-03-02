@@ -15,16 +15,17 @@ using namespace MathsPhysics;
 
 int main() {
     
-	GaussLegQuadMachine gasLeg(10);
+	//GaussLegQuadMachine gasLeg(30);
+    GaussLagQuadMachine gasLag(30);
 
-	std::vector<std::vector<long double>> pw = gasLeg.PointsAndWeights();
+	std::vector<std::vector<long double>> pw = gasLag.PointsAndWeights();
 
 	for (int i = 0; i < pw[0].size(); i++) {
 
-		std::cout << pw[i][0] << " " << pw[i][1] << "\n";
+        std::cout << pw[i][0] << " " << pw[i][1] << std::endl;
 
 	}
 
-	std::getchar();
+	//std::getchar();
     return 0;
 }

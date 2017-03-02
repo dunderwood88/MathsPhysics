@@ -23,7 +23,7 @@ public:
 		std::vector<long double> vec;
 
         if(upperLim < lowerLim){
-            std::cout << "upper limit is less than lower limit\n";
+            std::cout << "upper limit is less than lower limit" << std::endl;
 			return vec;
         }
        
@@ -31,9 +31,9 @@ public:
         long double prevPoint = lowerLim;
 		
         
-        for(long double point = lowerLim; point < upperLim + step; point += step){
+        for(long double point = lowerLim - step; point < upperLim + step; point += step){
             
-            if(func.Compute(point) == 0 || point == 0){
+            if(func.Compute(point) == 0){
 
 				vec.push_back(point);
             }
@@ -53,7 +53,7 @@ public:
     virtual long double AreaUnderCurve(IFunction& func, long double upperLim, long double lowerLim, long double step){
         
         if(upperLim < lowerLim){
-            std::cout << "upper limit is less than lower limit\n";
+            std::cout << "upper limit is less than lower limit" << std::endl;
             return 0;
         }
         

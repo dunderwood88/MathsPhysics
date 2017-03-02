@@ -10,6 +10,7 @@
 		37DE4DBA1E6618DA00FA1BF0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DB91E6618DA00FA1BF0 /* main.cpp */; };
 		37DE4DC41E662A5800FA1BF0 /* Functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DC31E662A5800FA1BF0 /* Functions.cpp */; };
 		37DE4DC71E662F3C00FA1BF0 /* CalculusMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DC51E662F3C00FA1BF0 /* CalculusMachine.cpp */; };
+		37DE4DCA1E68C1AB00FA1BF0 /* GaussQuadMachines.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DC91E68C1AB00FA1BF0 /* GaussQuadMachines.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,6 +33,7 @@
 		37DE4DC51E662F3C00FA1BF0 /* CalculusMachine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CalculusMachine.cpp; sourceTree = "<group>"; };
 		37DE4DC61E662F3C00FA1BF0 /* ICalculusMachine.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ICalculusMachine.hpp; sourceTree = "<group>"; };
 		37DE4DC81E6782A600FA1BF0 /* IGaussQuadFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IGaussQuadFunction.h; sourceTree = "<group>"; };
+		37DE4DC91E68C1AB00FA1BF0 /* GaussQuadMachines.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GaussQuadMachines.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		37DE4DB81E6618DA00FA1BF0 /* Maths-Physics */ = {
 			isa = PBXGroup;
 			children = (
+				37DE4DC91E68C1AB00FA1BF0 /* GaussQuadMachines.cpp */,
 				37DE4DB91E6618DA00FA1BF0 /* main.cpp */,
 				37DE4DC01E66190B00FA1BF0 /* IFunction.h */,
 				37DE4DC81E6782A600FA1BF0 /* IGaussQuadFunction.h */,
@@ -130,6 +133,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37DE4DCA1E68C1AB00FA1BF0 /* GaussQuadMachines.cpp in Sources */,
 				37DE4DBA1E6618DA00FA1BF0 /* main.cpp in Sources */,
 				37DE4DC71E662F3C00FA1BF0 /* CalculusMachine.cpp in Sources */,
 				37DE4DC41E662A5800FA1BF0 /* Functions.cpp in Sources */,
