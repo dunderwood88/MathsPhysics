@@ -19,13 +19,12 @@ int main() {
 
 	std::vector<std::vector<long double>> pw = gasLeg.PointsAndWeights();
 
-	
+	for (int i = 0; i < pw[0].size(); i++) {
 
-	//for (int i = 0; i < pw.size(); i++) {
+		std::cout << pw[i][0] << " " << pw[i][1] << "\n";
 
-		//std::cout << pw[1][1] << " " << pw[1][0] << "\n";
-	
-	
+	}
+
 	std::getchar();
     return 0;
 }

@@ -31,19 +31,14 @@ public:
 	std::vector<std::vector<long double>> PointsAndWeights() {
 
 		std::vector<long double> _zeroes = FindZeroes(_leg, 1, 0, 0.001);
-		std::vector<std::vector<long double>> _pointsAndWeights;
-
-		_pointsAndWeights.push_back(_zeroes);
-		_pointsAndWeights.resize(1);
+		std::vector<std::vector<long double>> _pointsAndWeights(_zeroes.size(), std::vector<long double>(_zeroes.size()));
 
 		for (int i = 0; i < _zeroes.size(); i++) {
 
+			long double _weight = 2 / ((1 - (_zeroes[i] * _zeroes[i])) * (_leg.Derivative(_zeroes[i]) * _leg.Derivative(_zeroes[i])));
 
-
-
-			//long double _weight = 2 / ((1 - (_zeroes[i] * _zeroes[i])) * (_leg.Derivative(_zeroes[i]) * _leg.Derivative(_zeroes[i])));
-			//_pointsAndWeights[1][i] = _weight;
-
+			_pointsAndWeights[i][0] = _zeroes[i];
+			_pointsAndWeights[i][1] = _weight;
 		}
 
 		return _pointsAndWeights;
