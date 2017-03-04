@@ -9,11 +9,11 @@
 #include <iostream>
 #include <stdio.h>
 #include <math.h>
-#include "IGaussQuadFunction.h"
+#include "IFunction.h"
 
 using namespace MathsPhysics;
 
-class Legendre: public IGaussQuadFunction{
+class Legendre: public IFunction{
     
 private:
     int _degree;
@@ -37,17 +37,8 @@ public:
 		_order = ord;
 	}
     
-    virtual long double Derivative(long double x){
-        
-		_degree -= 1;
-		long double legDegPrev = Compute(x);
-		_degree += 1;
-		
-		return (_degree / ((x * x) - 1)) * ((x * Compute(x)) - ((_order + 1) * legDegPrev));
-
-    }
     
-    virtual long double Compute(long double value) {
+    virtual long double Compute(long double& value) {
         
         /*if (_order > _degree || std::abs(value) > 1.0) {
             std::cout << _order << " " << _degree << " " << std::abs(value) << " Bad arguments.\n";
@@ -100,7 +91,7 @@ public:
 
 
 
-class Laguerre: public IGaussQuadFunction{
+class Laguerre: public IFunction{
     
 private:
     int _degree;
@@ -118,18 +109,8 @@ public:
         _order = ord;
     }
     
-    virtual long double Derivative(long double x){
-        
-        _degree += 1;
-        _order -= 1;
-        long double lagDegPrev = -Compute(x);
-        _degree -= 1;
-        _order += 1;
-        
-        return lagDegPrev;
-    }
     
-    virtual long double Compute(long double value){
+    virtual long double Compute(long double& value){
         
         double p0 = 1;
         double p1 = 1 + _order - value;
@@ -164,7 +145,7 @@ public:
 class Sine: public IFunction{
 
 public:
-virtual long double Compute(long double value){
+virtual long double Compute(long double& value){
 
 return sinl(value);
 }
@@ -173,7 +154,7 @@ return sinl(value);
 class Cosine: public IFunction{
 
 public:
-virtual long double Compute(long double value){
+virtual long double Compute(long double& value){
 
 return cosl(value);
 }
