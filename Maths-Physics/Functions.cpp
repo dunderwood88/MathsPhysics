@@ -145,17 +145,37 @@ public:
 class Sine: public IFunction{
 
 public:
-virtual long double Compute(long double& value){
+    virtual long double Compute(long double& value){
 
-return sinl(value);
-}
+        return sinl(value);
+    }
 };
 
 class Cosine: public IFunction{
 
 public:
-virtual long double Compute(long double& value){
+    virtual long double Compute(long double& value){
 
-return cosl(value);
-}
+        return cosl(value);
+    }
+};
+
+
+class Morse: public IFunction{
+    
+private:
+    long double _a;
+    long double _eqR;
+    
+public:
+    Morse(long double a, long double eqR){
+        _a = a;
+        _eqR = eqR;
+    }
+    
+    virtual long double Compute(long double& dispR){
+        
+        return 1 - expl(-_a * (dispR - _eqR));
+    }
+    
 };

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3732F3EE1E6C397200F6F065 /* libcblas.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3732F3ED1E6C397100F6F065 /* libcblas.tbd */; };
+		3732F3F01E6C913900F6F065 /* libclapack.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3732F3EF1E6C913900F6F065 /* libclapack.tbd */; };
+		3732F3F41E6CB1EC00F6F065 /* MorbidPotential.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3732F3F31E6CB1EC00F6F065 /* MorbidPotential.cpp */; };
 		37DE4DBA1E6618DA00FA1BF0 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DB91E6618DA00FA1BF0 /* main.cpp */; };
 		37DE4DC41E662A5800FA1BF0 /* Functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DC31E662A5800FA1BF0 /* Functions.cpp */; };
 		37DE4DC71E662F3C00FA1BF0 /* CalculusMachine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37DE4DC51E662F3C00FA1BF0 /* CalculusMachine.cpp */; };
@@ -26,6 +29,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		3732F3ED1E6C397100F6F065 /* libcblas.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libcblas.tbd; path = usr/lib/libcblas.tbd; sourceTree = SDKROOT; };
+		3732F3EF1E6C913900F6F065 /* libclapack.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libclapack.tbd; path = usr/lib/libclapack.tbd; sourceTree = SDKROOT; };
+		3732F3F11E6C9DAE00F6F065 /* IPotential.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IPotential.h; sourceTree = "<group>"; };
+		3732F3F21E6CA9B200F6F065 /* WaterPot */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = WaterPot; sourceTree = "<group>"; };
+		3732F3F31E6CB1EC00F6F065 /* MorbidPotential.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MorbidPotential.cpp; sourceTree = "<group>"; };
 		37DE4DB61E6618DA00FA1BF0 /* Maths-Physics */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Maths-Physics"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37DE4DB91E6618DA00FA1BF0 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		37DE4DC01E66190B00FA1BF0 /* IFunction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IFunction.h; sourceTree = "<group>"; };
@@ -40,6 +48,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3732F3F01E6C913900F6F065 /* libclapack.tbd in Frameworks */,
+				3732F3EE1E6C397200F6F065 /* libcblas.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -49,6 +59,8 @@
 		37DE4DAD1E6618DA00FA1BF0 = {
 			isa = PBXGroup;
 			children = (
+				3732F3EF1E6C913900F6F065 /* libclapack.tbd */,
+				3732F3ED1E6C397100F6F065 /* libcblas.tbd */,
 				37DE4DB81E6618DA00FA1BF0 /* Maths-Physics */,
 				37DE4DB71E6618DA00FA1BF0 /* Products */,
 			);
@@ -71,6 +83,9 @@
 				37DE4DC31E662A5800FA1BF0 /* Functions.cpp */,
 				37DE4DC51E662F3C00FA1BF0 /* CalculusMachine.cpp */,
 				37DE4DC61E662F3C00FA1BF0 /* ICalculusMachine.hpp */,
+				3732F3F11E6C9DAE00F6F065 /* IPotential.h */,
+				3732F3F21E6CA9B200F6F065 /* WaterPot */,
+				3732F3F31E6CB1EC00F6F065 /* MorbidPotential.cpp */,
 			);
 			path = "Maths-Physics";
 			sourceTree = "<group>";
@@ -132,6 +147,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37DE4DCA1E68C1AB00FA1BF0 /* GaussQuadMachines.cpp in Sources */,
+				3732F3F41E6CB1EC00F6F065 /* MorbidPotential.cpp in Sources */,
 				37DE4DBA1E6618DA00FA1BF0 /* main.cpp in Sources */,
 				37DE4DC71E662F3C00FA1BF0 /* CalculusMachine.cpp in Sources */,
 				37DE4DC41E662A5800FA1BF0 /* Functions.cpp in Sources */,

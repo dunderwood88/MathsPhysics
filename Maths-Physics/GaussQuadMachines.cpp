@@ -9,7 +9,6 @@
 #include "CalculusMachine.cpp"
 #include "Functions.cpp"
 #include <iostream>
-//#include "IGaussQuadFunction.h"
 
 using namespace MathsPhysics;
 
